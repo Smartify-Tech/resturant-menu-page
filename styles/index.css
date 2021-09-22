@@ -1,0 +1,197 @@
+
+body {
+    background-color:rgb(250, 255, 255);
+}
+
+/* Header */
+.title {
+    text-align: center;
+    margin-bottom: .5em;
+
+}
+.title h2 {
+    font-family:  monospace;
+    font-size: 30px;
+    margin-bottom: .3em;
+}
+.underline{
+    border: 1.5px solid #fc8b02f6;
+    margin-top: 0;
+    width: 5em;
+    margin: 0 auto;
+    font-weight: 300;
+    background-color: #fc8b02f6;
+}
+
+
+/* Filter Buttons */
+.btn-container{
+    margin-top: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 2em;
+}
+
+.filter-btn{
+    font-size: 16px;
+    margin: 7px;
+    border-radius: 5px;
+    border: 1px solid #fc8b02f6;
+    padding: 5px 7px;
+    text-transform: capitalize;
+    background: none;
+}
+
+.filter-btn:hover{
+    background-color: #fc8b02f6;
+    color: white;
+    transition-duration: .75s;
+    
+}
+.filter-btn:focus{
+    background-color: #fc8b02f6;
+    color: white;
+    transition-duration: .5s;
+    
+}
+.menu-item {
+    display: flex;
+    margin-bottom: 3em;
+    margin: 0 auto;
+    flex-direction: column;
+}
+
+/* Menu items */
+.menu-items{
+    display: flex;
+    flex-direction: column;
+    /* width: 100%; */
+    margin: 0 1em;
+}
+
+.item-info header {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(0, 0, 0, .3);
+    font-size: 20px;
+    padding: 4px;
+}
+
+.item-info header h4 {
+    margin-bottom: 2px;
+    margin-top: 7px;
+}
+
+.item-photo {
+    width: 100%;
+    height: 200px;
+    background-color: rgb(235, 233, 230);
+    border-radius: 7px;
+    margin: 10px;
+    margin: 0 auto;
+    box-shadow:  -4px 4px 20px #f0dcc3f6;
+}
+
+
+.menu {
+
+    width: 100%;
+    margin: 0 auto;
+}
+
+
+.item-name {
+    font-family: 'Lora', serif;
+    font-family: 'Nunito', sans-serif;
+    text-transform: capitalize;
+}
+
+.item-description {
+    line-height: 1.4rem;
+    font-size: 14px;
+    font-family: 'Lucida Sans', 
+                'Lucida Sans Regular', 
+                'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    word-spacing: 4px;
+    letter-spacing: 1.3px;
+    text-align: justify;
+    
+  
+}
+
+
+.item-price {
+    opacity: 1;
+    font-family: 'Lora', serif;
+    color: #fc8b02f6;
+    text-shadow: 2px 2px 2px rgb(207, 206, 206);
+}
+
+
+@media screen and (max-width: 600px) {
+    .menu{
+        max-width: 384px;
+        margin: 0 auto;
+    }
+}
+
+@media screen and (min-width: 550px) {
+
+ 
+    .menu-item {
+        flex-direction: row;
+    }
+
+    .menu {
+        max-width: 700px;
+        margin: 0 auto;
+
+    }
+    .item-photo {
+        width: 288px;
+        height: 200px;
+    }
+    .item-photo {
+        margin-right: 10px;
+    }
+
+    .menu-item{
+        margin-bottom: 2em;
+    }
+}
+
+@media screen and (min-width: 1115px){
+    .menu-items{
+        flex-direction: row;
+        flex-wrap: wrap; 
+        justify-content: center;
+        
+    }
+    .menu-item{
+         margin: 2rem;
+         width: 40%;
+    }
+    .menu{
+       max-width: 90%;
+    }
+    .item-photo{
+        box-shadow: initial;
+        }
+    /* Hover */
+    .item-photo:hover {
+            box-shadow:  -4px 4px 15px #f0dcc3f6;
+    }
+
+    .item-price{
+            padding-right: 20%;
+            opacity: 0;
+    }
+
+    /* https://www.codegrepper.com/code-examples/css/on+hover+change+another+element+css */
+    .item-photo:hover + .item-info > header > .item-price{
+            opacity: 1;
+            padding-right: initial;
+            transition-duration: 1.5s;
+    }
+}
